@@ -39,11 +39,11 @@ export function formatByteSize(bytes) {
     const gigabyte = megabyte * 1000;
   
     if (bytes >= gigabyte) {
-      return (bytes / gigabyte).toFixed() + ' GB';
+      return (bytes / gigabyte).toFixed(2) + ' GB';
     } else if (bytes >= megabyte) {
-      return (bytes / megabyte).toFixed() + ' MB';
+      return (bytes / megabyte).toFixed(2) + ' MB';
     } else if (bytes >= kilobyte) {
-      return (bytes / kilobyte).toFixed() + ' KB';
+      return (bytes / kilobyte).toFixed(2) + ' KB';
     } else {
       return bytes + ' Bytes';
     }

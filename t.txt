@@ -1,3 +1,0 @@
-graph : top 10 des projects
-
-talents proximity || ??

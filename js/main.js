@@ -35,6 +35,7 @@ export function renderLoginForm() {
         </form>
       </div>
     `;
+    localStorage.removeItem("authToken");
   document.getElementById("submit").addEventListener("click", (e) => {
     e.preventDefault()
     login(e)
@@ -90,7 +91,8 @@ export async function useFetchedData() {
     })
       .then(response => response.json())
       .then(res => {
-        if (typeof res != "undefined") {
+        if (typeof res != "undefined" && res.data.skills.length != 0) {
+          console.log(res.data);
           var topcontain = document.querySelector(".top-container")
           const gitea = res.data.event_user[0].user.login
           var gitt = document.getElementById("Gitea")
