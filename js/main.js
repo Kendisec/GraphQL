@@ -35,7 +35,7 @@ export function renderLoginForm() {
         </form>
       </div>
     `;
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("authToken")
   document.getElementById("submit").addEventListener("click", (e) => {
     e.preventDefault()
     login(e)
@@ -92,7 +92,6 @@ export async function useFetchedData() {
       .then(response => response.json())
       .then(res => {
         if (typeof res != "undefined" && res.data.skills.length != 0) {
-          console.log(res.data);
           var topcontain = document.querySelector(".top-container")
           const gitea = res.data.event_user[0].user.login
           var gitt = document.getElementById("Gitea")
@@ -103,8 +102,9 @@ export async function useFetchedData() {
           const lastproject = res.data.event_user[0].user.lastProjectValidated[0].object.name
           const Ratio = res.data.event_user[0].user.auditRatio.toFixed(1)
           const Xp = formatByteSize(res.data.XP.aggregate.sum.amount)
+          console.log("this is xp",res.data.XP.aggregate.sum.amount);
           // console.log(res.data.XP.aggregate.sum.amount);
-          console.log("ù", res.data.AllProjectValidated[0].path, res.data.AllProjectValidated[0].amount)
+          // console.log("ù", res.data.AllProjectValidated[0].path, res.data.AllProjectValidated[0].amount)
           const All = res.data.AllProjectValidated
             .sort((a, b) => parseFloat(b.amount) - parseFloat(a.amount))
             .slice(0, 10)

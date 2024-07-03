@@ -29,8 +29,6 @@ export function login(event) {
 
 export function logout() {
     localStorage.removeItem("authToken");
-    console.log("Logged out");
-    console.log(localStorage);
     const homePage = document.getElementById("Home_Page");
     if (homePage) {
       document.body.removeChild(homePage);
